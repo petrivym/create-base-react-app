@@ -28,4 +28,38 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
   ```
-  ----------------------------------------------------------------------
+  ***
+- add libs for life coding
+  ```
+  npm i react-router-dom axios formik npm install @mui/material @mui/styled-engine-sc styled-components @fontsource/roboto @mui/icons-material lodash
+  ```
+  ***
+- Axios
+
+  - create folder
+    ```
+    mkdir > services -> mkdir > networking
+    ```
+  - create files
+
+    ```
+    api.ts config axios instance
+    ```
+
+    ```
+    user.services.ts
+    ```
+
+  ***
+
+- React-Router-Dom
+
+  ```
+  npm i react-router-dom
+  ```
+
+  - config router
+
+  ```
+
+  ```
