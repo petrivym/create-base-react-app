@@ -5,9 +5,8 @@ type Props = {
   users: User[];
 };
 
-const CardsListMaterial = ({ users = [] }: Props) => {
+const UsersList = ({ users = [] }: Props) => {
   return (
-    // grid використати гріди для вирівнювання висоти()
     <Box sx={{}}>
       {users.map((_) => (
         <Card sx={{p: "20px"}}>
@@ -19,4 +18,4 @@ const CardsListMaterial = ({ users = [] }: Props) => {
   );
 };
 
-export default CardsListMaterial;
+export default UsersList;

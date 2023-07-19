@@ -1,5 +1,5 @@
-import RootLayout from "./components/RootLayout";
-import ErrorHandler from "./components/errorHandler/ErrorHandler";
+import RootLayout from "./components/RootLayout/RootLayout";
+import ErrorHandler from "./components/ErrorHandler/ErrorHandler";
 import { ROUTES } from "./constants";
 import NoMatchPage from "./page/NoMatchPage";
 import { loader as loaderUser } from "./page/UserDetailPage";

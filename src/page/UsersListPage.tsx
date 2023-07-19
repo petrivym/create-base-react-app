@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import CardsListMaterial from "../components/cardsListMatirial/CardsListMatirial";
+import CardsListMaterial from "../components/UserssList/UsersList";
 import { GetUserResponse } from "../types";
 import { Grid } from "@mui/material";
 
