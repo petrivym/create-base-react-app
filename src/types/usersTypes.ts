@@ -22,5 +22,12 @@ export type User = {
 };
 
 export type GetUserResponse = {
-  data: User[];
+  limit: number;
+  skip: number;
+  total: number;
+  users: User[];
+};
+
+export type requestUserId = {
+  id: string;
 };

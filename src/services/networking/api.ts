@@ -1,6 +1,4 @@
-import axios, { AxiosInstance, AxiosResponse } from "axios";
-
-axios.defaults.headers.common["Accept"] = "application/json";
+import axios, { AxiosInstance, isAxiosError } from "axios";
 
 export const userApi: AxiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -10,21 +8,21 @@ export const userApi: AxiosInstance = axios.create({
   timeout: 5000,
 });
 
-export const makeRequest = async <T>(
+export const makeRequest = async <T, R = any>(
   method: string,
-  baseURL: AxiosInstance,
+  api: AxiosInstance,
   url: string,
-  data?: any
+  data?: R
 ): Promise<T | undefined> => {
   try {
-    const response: AxiosResponse<T> = await baseURL({ url, method, data });
+    const response = await api<T>({ url, method, data });
 
     return response.data;
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      console.log(error.message);
+  } catch (error: unknown) {
+    if (isAxiosError<{ error?: { message: string } }>(error)) {
+      throw error;
     }
 
-    console.log("An unexpected error occurred");
+    throw new Error("An unknown error");
   }
 };
