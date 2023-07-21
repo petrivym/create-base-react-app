@@ -1,11 +1,10 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { paths } from "./router";
-import { CircularProgress } from "@mui/material";
-
+import Loader from "./components/Loader/Loader";
 const router = createBrowserRouter(paths);
 
 function App() {
-  return <RouterProvider router={router} fallbackElement={<CircularProgress />} />;
+  return <RouterProvider router={router} fallbackElement={<Loader />} />;
 }
 
 export default App;

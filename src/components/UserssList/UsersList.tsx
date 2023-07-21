@@ -1,5 +1,5 @@
-import { Box, Card, Typography } from "@mui/material";
 import { User } from "../../types";
+import UserCardStyle from "./userCard/UserCardStyle";
 
 type Props = {
   users: User[];
@@ -7,15 +7,10 @@ type Props = {
 
 const UsersList = ({ users = [] }: Props) => {
   return (
-    <Box sx={{}}>
-      {users.map((_) => (
-        <Card sx={{p: "20px"}}>
-          <Typography variant="h6">{_.firstName}</Typography>
-          <Typography variant="h6">{_.lastName}</Typography>
-        </Card>
-      ))}
-    </Box>
+    <>
+      {users.map(_ => <UserCardStyle user = {_}/>)}
+    </>
   );
-};
+}
 
 export default UsersList;
