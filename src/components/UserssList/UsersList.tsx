@@ -8,9 +8,11 @@ type Props = {
 const UsersList = ({ users = [] }: Props) => {
   return (
     <>
-      {users.map(_ => <UserCardStyle user = {_}/>)}
+      {users.map((_) => (
+        <UserCardStyle user={_} />
+      ))}
     </>
   );
-}
+};
 
 export default UsersList;
