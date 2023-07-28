@@ -1,5 +1,6 @@
+import { Box } from "@mui/material";
 import { User } from "../../types";
-import UserCardStyle from "./userCard/UserCardStyle";
+import { UserCard } from "./userCard/userCard";
 
 type Props = {
   users: User[];
@@ -7,11 +8,11 @@ type Props = {
 
 const UsersList = ({ users = [] }: Props) => {
   return (
-    <>
+    <Box display="grid" gridTemplateColumns="repeat(4, 1fr)" gap={2}>
       {users.map((_) => (
-        <UserCardStyle user={_} />
+        <UserCard user={_} />
       ))}
-    </>
+    </Box>
   );
 };
 

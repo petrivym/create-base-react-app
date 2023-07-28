@@ -1,7 +1,6 @@
 import RootLayout from "./components/RootLayout/RootLayout";
 import ErrorHandler from "./components/ErrorHandler/ErrorHandler";
 import { ROUTES } from "./constants";
-import NoMatchPage from "./page/NoMatchPage";
 import { loader as loaderUser } from "./page/UserDetailPage";
 import UserDetailPage from "./page/UserDetailPage";
 import UsersListPage from "./page/UsersListPage";
@@ -22,11 +21,7 @@ export const paths = [
         path: ROUTES.user(),
         element: <UserDetailPage />,
         loader: loaderUser,
-      },
-      {
-        path: ROUTES.all,
-        element: <NoMatchPage />,
-      },
+      }
     ],
   },
 ];

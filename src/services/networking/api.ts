@@ -23,6 +23,6 @@ export const makeRequest = async <T, R = any>(
       throw error;
     }
 
-    throw new Error("An unknown error");
+    throw new Error("unknown error");
   }
 };
