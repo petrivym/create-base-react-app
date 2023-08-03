@@ -1,6 +1,6 @@
 import { FormControl, InputLabel, MenuItem, Paper, Select } from "@mui/material";
 import { FilterValue, filterOptions } from "../../constants/filterConsts";
-import { Genders } from "../../constants";
+import { Form, useSubmit } from "react-router-dom";
 
 type Props = {
   filterValue: FilterValue;
@@ -8,22 +8,28 @@ type Props = {
 };
 
 const FilterBar = ({ filterValue, setFilterValue }: Props) => {
+  const submit = useSubmit();
+
+  // filter?key=hair.color&value=Brown
   return (
     <Paper sx={{ minHeight: "300px", p: "1rem" }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Gender</InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="dem o-simple-select"
-          value={filterValue}
-          label="Gender"
-          onChange={(e) => setFilterValue(e.target.value as FilterValue)}
-        >
-          {filterOptions.map((_) => (
-            <MenuItem value={_.value}>{_.label}</MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+      <Form method="get" action="filter?key=" id="search-form" role="search">
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Gender</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="gender"
+            value={filterValue}
+            label="Gender"
+            name="gender"
+            onChange={(e) => console.log(e)}
+          >
+            {filterOptions.map((_) => (
+              <MenuItem value={_.value}>{_.label}</MenuItem>
+              ))}
+              </Select>
+              </FormControl>
+            </Form>
     </Paper>
   );
 };

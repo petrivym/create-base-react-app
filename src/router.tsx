@@ -4,7 +4,7 @@ import { ROUTES } from "./constants";
 import { loader as loaderUser } from "./page/UserDetailPage";
 import UserDetailPage from "./page/UserDetailPage";
 import UsersListPage from "./page/UsersListPage";
-import { getUsers } from "./services/networking";
+import { loader as loaderUsers } from "./page/UsersListPage";
 
 export const paths = [
   {
@@ -15,13 +15,13 @@ export const paths = [
       {
         element: <UsersListPage />,
         index: true,
-        loader: getUsers,
+        loader: loaderUsers,
       },
       {
         path: ROUTES.user(),
         element: <UserDetailPage />,
         loader: loaderUser,
-      }
+      },
     ],
   },
 ];
